@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+<script src="https://www.gstatic.com/firebasejs/3.5.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCOP01rMTLCL5SF6A7UlPYNPT15dbeCEfc",
+    authDomain: "project-f5726.firebaseapp.com",
+    databaseURL: "https://project-f5726.firebaseio.com",
+    storageBucket: "project-f5726.appspot.com",
+    messagingSenderId: "852111692273"
+  };
+  firebase.initializeApp(config);
+
+	var database = firebase.database();
+</script>
+
+<button onclick="writeUserData("Jimmy")">button</button>
+<script>
+function writeUserData(name) {
+	alert("Your data has been submitted");
+  firebase.database().ref('users/' + name).set({
+    username: name
+  });
+}
+</script>
+
+<body>
+</body>
+</html>
